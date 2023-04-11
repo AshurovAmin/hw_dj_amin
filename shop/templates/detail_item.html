@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form method="POST">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ item.name }} {{ item.price }}</h1></legend>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+    {% for purchase in purchase.purchase_set.all %}
+    {% endfor %}
+</fieldset>
+</form>
+{% endblock content %}
